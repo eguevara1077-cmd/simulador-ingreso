@@ -22,19 +22,25 @@
         .price-badge { display: inline-block; background-color: #0F172A; color: #ffffff; padding: 12px 28px; border-radius: 50px; font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); }
         .price-badge span { color: #25D366; font-size: 1.5rem; font-weight: 800; }
 
-        /* Botón de WhatsApp */
-        .btn { display: inline-block; background-color: #25D366; color: #fff; padding: 16px 36px; text-decoration: none; font-weight: 700; border-radius: 10px; font-size: 1.25rem; box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; }
-        .btn:hover { background-color: #128C7E; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(18, 140, 126, 0.4); }
+        /* Botones */
+        .btn-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 10px; }
+        .btn { display: inline-block; padding: 16px 30px; text-decoration: none; font-weight: 700; border-radius: 10px; font-size: 1.15rem; transition: all 0.3s ease; }
+        .btn-download { background-color: #FF6B00; color: #fff; box-shadow: 0 6px 16px rgba(255, 107, 0, 0.3); }
+        .btn-download:hover { background-color: #E65A00; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(230, 90, 0, 0.4); }
+        .btn-whatsapp { background-color: #25D366; color: #fff; box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp:hover { background-color: #128C7E; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(18, 140, 126, 0.4); }
 
-        /* Tarjetas de Características */
-        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; padding: 3.5rem 1rem; max-width: 1100px; margin: auto; }
-        .feature-box { background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px; width: 300px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.2s ease; }
-        .feature-box:hover { transform: translateY(-4px); }
-        .feature-box h3 { color: #0F172A; margin-top: 0; font-size: 1.3rem; }
-        .feature-box p { color: #64748B; font-size: 0.98rem; margin-bottom: 0; }
+        /* Pasos / Tarjetas */
+        .steps-container { background: #F8FAFC; padding: 3rem 1rem; text-align: center; }
+        .steps-container h2 { color: #0F172A; font-size: 1.8rem; margin-bottom: 2rem; }
+        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 1100px; margin: auto; }
+        .feature-box { background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px; width: 300px; text-align: left; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+        .step-num { background: #0F172A; color: #fff; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 15px; font-size: 1.2rem; }
+        .feature-box h3 { color: #0F172A; margin-top: 0; font-size: 1.2rem; }
+        .feature-box p { color: #64748B; font-size: 0.95rem; margin-bottom: 0; }
 
         /* Pie de página */
-        .footer { background-color: #0F172A; color: #94A3B8; text-align: center; padding: 2.5rem 1rem; margin-top: 2rem; font-size: 0.9rem; border-top: 1px solid #1E293B; }
+        .footer { background-color: #0F172A; color: #94A3B8; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #1E293B; }
         .footer strong { color: #F1F5F9; }
     </style>
 </head>
@@ -52,23 +58,36 @@
         <div class="price-badge">
             Valor: <span>$20 USD</span> | Licencia completa por 6 meses
         </div>
-        <br>
-
-        <a href="https://wa.me/593996931833?text=Hola,%20quiero%20comprar%20el%20Simulador%20de%20Ingreso%20a%20Universidades%20por%20$20%20USD" class="btn" target="_blank">📲 Comprar ahora por WhatsApp ($20 USD)</a>
+        
+        <div class="btn-container">
+            <!-- Botón de Descarga -->
+            <a href="https://github.com/eguevara1077-cmd/simulador-releases/releases/latest" class="btn btn-download" target="_blank">📥 1. Descargar Simulador v1.3.3</a>
+            
+            <!-- Botón de WhatsApp -->
+            <a href="https://wa.me/593996931833?text=Hola,%20ya%20descargué%20el%20simulador%20y%20quiero%20comprar%20mi%20licencia%20de%206%20meses%20por%20$20%20USD." class="btn btn-whatsapp" target="_blank">📲 2. Activar Licencia por WhatsApp</a>
+        </div>
+        
+        <p style="margin-top: 20px; font-size: 0.95rem; color: #64748B;">* Descarga e instala el programa totalmente gratis para comprobar su funcionamiento en tu PC. Para acceder a las preguntas requerirás la clave de activación.</p>
     </section>
 
-    <section class="features">
-        <div class="feature-box">
-            <h3>💻 Funciona Sin Internet</h3>
-            <p>Instálalo en tu computador y estudia en cualquier lugar. Todo el contenido está incluido, no dependes de Wi-Fi ni gastas datos.</p>
-        </div>
-        <div class="feature-box">
-            <h3>🔑 Licencia por 6 Meses</h3>
-            <p>Acceso completo e ilimitado durante 6 meses por un pago único de $20 USD. El tiempo ideal para preparar tu examen con total tranquilidad.</p>
-        </div>
-        <div class="feature-box">
-            <h3>📈 Simulacros Reales</h3>
-            <p>Mide tu tiempo, evalúa tus niveles y revisa tu avance con pruebas estructuradas igual a los temarios de evaluación oficiales.</p>
+    <section class="steps-container">
+        <h2>¿Cómo empezar a estudiar hoy mismo?</h2>
+        <div class="features">
+            <div class="feature-box">
+                <div class="step-num">1</div>
+                <h3>Descarga e Instala</h3>
+                <p>Haz clic en el botón naranja de arriba para descargar el instalador oficial desde nuestro repositorio seguro. Ejecútalo e instálalo en tu computador.</p>
+            </div>
+            <div class="feature-box">
+                <div class="step-num">2</div>
+                <h3>Copia tu Código</h3>
+                <p>Al abrir el programa, la pantalla de bloqueo te mostrará un <strong>Código de Máquina</strong> único. Este código sirve para enlazar tu computadora con la licencia.</p>
+            </div>
+            <div class="feature-box">
+                <div class="step-num">3</div>
+                <h3>Paga y Activa</h3>
+                <p>Escríbenos por WhatsApp con tu código de máquina y el comprobante de transferencia bancaria ($20). Te enviaremos de inmediato tu clave de activación por 6 meses.</p>
+            </div>
         </div>
     </section>
 
