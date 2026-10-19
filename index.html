@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Ingreso a Universidades | Ecuador</title>
+    <title>Simulador de Ingreso a Universidades | Proyectos Tecnológicos GF</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #1E293B; line-height: 1.6; }
-        header { background-color: #003366; color: white; padding: 2.5rem 1rem; text-align: center; border-bottom: 5px solid #FF6B00; }
-        h1 { margin: 0; font-size: 2.5rem; }
-        .hero { background: #F8FAFC; padding: 3.5rem 1rem; text-align: center; }
-        .hero h2 { color: #0F172A; font-size: 2.2rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 1.5rem auto; }
-        .price-badge { display: inline-block; background-color: #003366; color: #ffffff; padding: 12px 25px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.5rem; }
-        .price-badge span { color: #FF6B00; font-size: 1.6rem; }
-        .btn { display: inline-block; background-color: #25D366; color: #fff; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 1.3rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background-color 0.3s; }
-        .btn:hover { background-color: #128C7E; }
-        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 3rem 1rem; max-width: 1100px; margin: auto; }
-        .feature-box { background: white; border: 1px solid #E2E8F0; border-radius: 10px; padding: 25px; width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .feature-box h3 { color: #0F172A; margin-top: 0; }
-        .footer { background-color: #0F172A; color: #94A3B8; text-align: center; padding: 2rem 1rem; margin-top: 2rem; font-size: 0.9rem; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #1E293B; line-height: 1.6; background-color: #FAFAFA; }
+        
+        /* Encabezado y Marca */
+        header { background-color: #0F172A; color: white; padding: 2.5rem 1rem; text-align: center; border-bottom: 5px solid #FF6B00; }
+        .brand-logo { font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; color: #FF6B00; text-transform: uppercase; margin-bottom: 8px; display: inline-block; background: rgba(255, 107, 0, 0.1); padding: 4px 14px; border-radius: 20px; border: 1px solid rgba(255, 107, 0, 0.3); }
+        h1 { margin: 10px 0 5px 0; font-size: 2.4rem; font-weight: 800; color: #FFFFFF; }
+        header p { font-size: 1.1rem; color: #CBD5E1; margin: 0; }
+
+        /* Sección Principal (Hero) */
+        .hero { background: #FFFFFF; padding: 3.5rem 1rem; text-align: center; border-bottom: 1px solid #E2E8F0; }
+        .hero h2 { color: #0F172A; font-size: 2rem; margin-bottom: 1rem; font-weight: 700; }
+        .hero p { font-size: 1.15rem; max-width: 800px; margin: 0 auto 1.5rem auto; color: #475569; }
+        
+        /* Badge de Precio */
+        .price-badge { display: inline-block; background-color: #0F172A; color: #ffffff; padding: 12px 28px; border-radius: 50px; font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); }
+        .price-badge span { color: #25D366; font-size: 1.5rem; font-weight: 800; }
+
+        /* Botón de WhatsApp */
+        .btn { display: inline-block; background-color: #25D366; color: #fff; padding: 16px 36px; text-decoration: none; font-weight: 700; border-radius: 10px; font-size: 1.25rem; box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; }
+        .btn:hover { background-color: #128C7E; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(18, 140, 126, 0.4); }
+
+        /* Tarjetas de Características */
+        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; padding: 3.5rem 1rem; max-width: 1100px; margin: auto; }
+        .feature-box { background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px; width: 300px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.2s ease; }
+        .feature-box:hover { transform: translateY(-4px); }
+        .feature-box h3 { color: #0F172A; margin-top: 0; font-size: 1.3rem; }
+        .feature-box p { color: #64748B; font-size: 0.98rem; margin-bottom: 0; }
+
+        /* Pie de página */
+        .footer { background-color: #0F172A; color: #94A3B8; text-align: center; padding: 2.5rem 1rem; margin-top: 2rem; font-size: 0.9rem; border-top: 1px solid #1E293B; }
+        .footer strong { color: #F1F5F9; }
     </style>
 </head>
 <body>
     <header>
+        <div class="brand-logo">PROYECTOS TECNOLÓGICOS GF</div>
         <h1>Simulador para Ingreso a Universidades</h1>
-        <p>Tu mejor herramienta de estudio para asegurar tu cupo</p>
+        <p>Tu mejor herramienta de estudio para asegurar tu cupo académico</p>
     </header>
 
     <section class="hero">
         <h2>Prepárate con el banco de preguntas más completo</h2>
-        <p>Practica con <strong>1233 preguntas actualizadas</strong>, técnicas de resolución paso a paso y simulacros reales para dominar tu examen de admisión desde tu propia computadora.</p>
+        <p>Practica con <strong>1233 preguntas actualizadas</strong>, técnicas de resolución paso a paso y simulacros reales para dominar tu examen de admisión directamente desde tu computador.</p>
         
         <div class="price-badge">
             Valor: <span>$20 USD</span> | Licencia completa por 6 meses
         </div>
         <br>
 
-        <a href="https://wa.me/593996931833?text=Hola,%20quiero%20comprar%20el%20Simulador%20de%20Ingreso%20a%20Universidades%20por%20$20%20USD" class="btn" target="_blank">Comprar ahora por WhatsApp ($20 USD)</a>
+        <a href="https://wa.me/593996931833?text=Hola,%20quiero%20comprar%20el%20Simulador%20de%20Ingreso%20a%20Universidades%20por%20$20%20USD" class="btn" target="_blank">📲 Comprar ahora por WhatsApp ($20 USD)</a>
     </section>
 
     <section class="features">
@@ -46,17 +64,17 @@
         </div>
         <div class="feature-box">
             <h3>🔑 Licencia por 6 Meses</h3>
-            <p>Acceso completo e ilimitado durante 6 meses por un pago único de $20 USD. Tiempo perfecto para preparar tu examen con calma.</p>
+            <p>Acceso completo e ilimitado durante 6 meses por un pago único de $20 USD. El tiempo ideal para preparar tu examen con total tranquilidad.</p>
         </div>
         <div class="feature-box">
             <h3>📈 Simulacros Reales</h3>
-            <p>Mide tu tiempo, evalúa tus niveles y revisa tu perfil general con estructuras idénticas a los temarios de evaluación oficiales.</p>
+            <p>Mide tu tiempo, evalúa tus niveles y revisa tu avance con pruebas estructuradas igual a los temarios de evaluación oficiales.</p>
         </div>
     </section>
 
     <footer class="footer">
-        <p>© 2026 Simulador de Ingreso a Universidades. Todos los derechos reservados.</p>
-        <p>Herramienta de uso referencial y didáctico. El software crea simulaciones originales basadas en dominio público.</p>
+        <p>© 2026 <strong>Proyectos Tecnológicos GF</strong>. Todos los derechos reservados.</p>
+        <p>Herramienta de uso referencial y didáctico desarrollada para preparación académica.</p>
     </footer>
 </body>
 </html>
