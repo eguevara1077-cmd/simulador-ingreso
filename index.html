@@ -2,98 +2,299 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Ingreso a Universidades | Proyectos Tecnológicos GF</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #1E293B; line-height: 1.6; background-color: #FAFAFA; }
-        
-        /* Encabezado y Marca */
-        header { background-color: #0F172A; color: white; padding: 2.5rem 1rem; text-align: center; border-bottom: 5px solid #FF6B00; }
-        .brand-logo { font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; color: #FF6B00; text-transform: uppercase; margin-bottom: 8px; display: inline-block; background: rgba(255, 107, 0, 0.1); padding: 4px 14px; border-radius: 20px; border: 1px solid rgba(255, 107, 0, 0.3); }
-        h1 { margin: 10px 0 5px 0; font-size: 2.4rem; font-weight: 800; color: #FFFFFF; }
-        header p { font-size: 1.1rem; color: #CBD5E1; margin: 0; }
-
-        /* Sección Principal (Hero) */
-        .hero { background: #FFFFFF; padding: 3.5rem 1rem; text-align: center; border-bottom: 1px solid #E2E8F0; }
-        .hero h2 { color: #0F172A; font-size: 2rem; margin-bottom: 1rem; font-weight: 700; }
-        .hero p { font-size: 1.15rem; max-width: 800px; margin: 0 auto 1.5rem auto; color: #475569; }
-        
-        /* Badge de Precio */
-        .price-badge { display: inline-block; background-color: #0F172A; color: #ffffff; padding: 12px 28px; border-radius: 50px; font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); }
-        .price-badge span { color: #25D366; font-size: 1.5rem; font-weight: 800; }
-
-        /* Botones */
-        .btn-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 10px; }
-        .btn { display: inline-block; padding: 16px 30px; text-decoration: none; font-weight: 700; border-radius: 10px; font-size: 1.15rem; transition: all 0.3s ease; }
-        .btn-download { background-color: #FF6B00; color: #fff; box-shadow: 0 6px 16px rgba(255, 107, 0, 0.3); }
-        .btn-download:hover { background-color: #E65A00; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(230, 90, 0, 0.4); }
-        .btn-whatsapp { background-color: #25D366; color: #fff; box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3); }
-        .btn-whatsapp:hover { background-color: #128C7E; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(18, 140, 126, 0.4); }
-
-        /* Pasos / Tarjetas */
-        .steps-container { background: #F8FAFC; padding: 3rem 1rem; text-align: center; }
-        .steps-container h2 { color: #0F172A; font-size: 1.8rem; margin-bottom: 2rem; }
-        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 1100px; margin: auto; }
-        .feature-box { background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px; width: 300px; text-align: left; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-        .step-num { background: #0F172A; color: #fff; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 15px; font-size: 1.2rem; }
-        .feature-box h3 { color: #0F172A; margin-top: 0; font-size: 1.2rem; }
-        .feature-box p { color: #64748B; font-size: 0.95rem; margin-bottom: 0; }
-
-        /* Pie de página */
-        .footer { background-color: #0F172A; color: #94A3B8; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #1E293B; }
-        .footer strong { color: #F1F5F9; }
-    </style>
+    <meta name="description" content="Simulador para el examen de admisión: 1233 preguntas con explicación paso a paso y simulacros con el formato de UCE, EPN, Universidad de Cuenca, Yachay Tech y USECIPOL. Pruébalo gratis en tu computador con Windows.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_EC">
+    <meta property="og:site_name" content="Proyectos Tecnológicos GF">
+    <meta property="og:title" content="Simulador de Ingreso a Universidades | Proyectos Tecnológicos GF">
+    <meta property="og:description" content="Simulador para el examen de admisión: 1233 preguntas con explicación paso a paso y simulacros con el formato de UCE, EPN, Universidad de Cuenca, Yachay Tech y USECIPOL. Pruébalo gratis en tu computador con Windows.">
+    <meta name="theme-color" content="#0F172A">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230F172A%22%2F%3E%3Cpath%20d%3D%22M18%2034l9%209%2019-21%22%20fill%3D%22none%22%20stroke%3D%22%23FF6B00%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/app.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="brand-logo">PROYECTOS TECNOLÓGICOS GF</div>
-        <h1>Simulador para Ingreso a Universidades</h1>
-        <p>Tu mejor herramienta de estudio para asegurar tu cupo académico</p>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#inicio" aria-label="Proyectos Tecnológicos GF, ir al inicio">
+                <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="#FF6B00"/><path d="M18 34l9 9 19-21" fill="none" stroke="#0F172A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Proyectos Tecnológicos GF</span>
+            </a>
+            <nav class="site-nav" aria-label="Secciones">
+                <ul>
+                    <li><a href="#incluye">Qué incluye</a></li>
+                    <li><a href="#capturas">Capturas</a></li>
+                    <li><a href="#como-empezar">Cómo empezar</a></li>
+                    <li><a href="#examenes">Exámenes</a></li>
+                    <li><a href="#licencia">Licencia</a></li>
+                    <li><a href="#preguntas">Preguntas</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h2>Prepárate con el banco de preguntas más completo</h2>
-        <p>Practica con <strong>1233 preguntas actualizadas</strong>, técnicas de resolución paso a paso y simulacros reales para dominar tu examen de admisión directamente desde tu computador.</p>
-        
-        <div class="price-badge">
-            Valor: <span>$20 USD</span> | Licencia completa por 6 meses
-        </div>
-        
-        <div class="btn-container">
-            <!-- Botón de Descarga -->
-            <a href="https://github.com/eguevara1077-cmd/simulador-releases/releases/latest" class="btn btn-download" target="_blank">📥 1. Descargar Simulador v1.3.3</a>
-            
-            <!-- Botón de WhatsApp -->
-            <a href="https://wa.me/593996931833?text=Hola,%20ya%20descargué%20el%20simulador%20y%20quiero%20comprar%20mi%20licencia%20de%206%20meses%20por%20$20%20USD." class="btn btn-whatsapp" target="_blank">📲 2. Activar Licencia por WhatsApp</a>
-        </div>
-        
-        <p style="margin-top: 20px; font-size: 0.95rem; color: #64748B;">* Descarga e instala el programa totalmente gratis para comprobar su funcionamiento en tu PC. Para acceder a las preguntas requerirás la clave de activación.</p>
-    </section>
+    <main id="contenido">
+        <!-- Hero -->
+        <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Para el examen de admisión de cualquier universidad o politécnica del Ecuador</p>
+                    <h1 id="titulo-principal">Simulador para Ingreso a Universidades</h1>
+                    <p class="hero-lead">Prepárate con más de 1200 preguntas resueltas.</p>
+                    <p class="hero-text">Practica con <strong>1233 preguntas</strong> con explicación, procedimiento paso a paso y técnicas de resolución, y con <strong>simulacros con el formato de cada examen</strong>, directamente desde tu computador.</p>
 
-    <section class="steps-container">
-        <h2>¿Cómo empezar a estudiar hoy mismo?</h2>
-        <div class="features">
-            <div class="feature-box">
-                <div class="step-num">1</div>
-                <h3>Descarga e Instala</h3>
-                <p>Haz clic en el botón naranja de arriba para descargar el instalador oficial desde nuestro repositorio seguro. Ejecútalo e instálalo en tu computador.</p>
-            </div>
-            <div class="feature-box">
-                <div class="step-num">2</div>
-                <h3>Copia tu Código</h3>
-                <p>Al abrir el programa, la pantalla de bloqueo te mostrará un <strong>Código de Máquina</strong> único. Este código sirve para enlazar tu computadora con la licencia.</p>
-            </div>
-            <div class="feature-box">
-                <div class="step-num">3</div>
-                <h3>Paga y Activa</h3>
-                <p>Escríbenos por WhatsApp con tu código de máquina y el comprobante de transferencia bancaria ($20). Te enviaremos de inmediato tu clave de activación por 6 meses.</p>
-            </div>
-        </div>
-    </section>
+                    <p class="price-badge"><span class="price">$20 USD</span><span class="price-sep" aria-hidden="true">·</span><span>Licencia por 6 meses, renovable</span></p>
 
-    <footer class="footer">
-        <p>© 2026 <strong>Proyectos Tecnológicos GF</strong>. Todos los derechos reservados.</p>
-        <p>Herramienta de uso referencial y didáctico desarrollada para preparación académica.</p>
+                    <div class="cta-group">
+                        <a href="https://github.com/eguevara1077-cmd/simulador-releases/releases/tag/v1.4.0" class="btn btn-download" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📥</span> 1. Descargar Simulador v1.4.0</a>
+                        <a href="https://wa.me/593996299724?text=Hola%2C%20quiero%20comprar%20la%20licencia%20del%20Simulador%20para%20Ingreso%20a%20Universidades%20%286%20meses%2C%20%2420%20USD%29.%0AMi%20nombre%20completo%20es%3A%20%0AMi%20c%C3%B3digo%20de%20m%C3%A1quina%20es%3A%20" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📲</span> 2. Comprar por WhatsApp</a>
+                        <a href="mailto:proyectostecnologicosgf@gmail.com?subject=Compra%20de%20licencia%20del%20Simulador&amp;body=Hola%2C%20quiero%20comprar%20la%20licencia%20del%20Simulador%20para%20Ingreso%20a%20Universidades%20%286%20meses%2C%20%2420%20USD%29.%0AMi%20nombre%20completo%20es%3A%20%0AMi%20c%C3%B3digo%20de%20m%C3%A1quina%20es%3A%20" class="btn btn-email js-email-cta"><span aria-hidden="true">✉️</span> 3. Comprar por correo</a>
+                    </div>
+
+                    <p class="free-line"><strong>Pruébalo gratis antes de comprar:</strong> descarga e instala el simulador sin costo.</p>
+                </div>
+
+                <aside class="plan-card" aria-labelledby="titulo-planes">
+                    <h2 id="titulo-planes" class="plan-card-title">Gratis o con licencia</h2>
+                    <div class="plan">
+                        <p class="plan-name">Sin clave <span class="tag tag-free">Gratis</span></p>
+                        <ul class="check-list">
+                            <li>Practicar y estudiar con hasta 10 preguntas por intento</li>
+                            <li>Entrenamiento de atención</li>
+                            <li>Historial</li>
+                        </ul>
+                    </div>
+                    <div class="plan plan-full">
+                        <p class="plan-name">Con licencia <span class="tag tag-paid">$20 USD · 6 meses</span></p>
+                        <ul class="check-list">
+                            <li>Modo Examen completo</li>
+                            <li>Simulacros</li>
+                            <li>Todas las preguntas</li>
+                        </ul>
+                    </div>
+                    <p class="plan-req"><span aria-hidden="true">💻</span> Requiere un computador con Windows.</p>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Qué incluye -->
+        <section class="section" id="incluye" aria-labelledby="titulo-incluye">
+            <div class="container">
+                <h2 id="titulo-incluye" class="section-title">Qué incluye</h2>
+                <div class="cards cards-3">
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">📚</span>
+                        <h3>1233 preguntas con explicación</h3>
+                        <p>Cada pregunta incluye explicación, procedimiento paso a paso y técnicas de resolución.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">📝</span>
+                        <h3>Simulacros por examen</h3>
+                        <p>Simulacros con el formato de cada examen y modo Examen completo.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">🎯</span>
+                        <h3>Atención e historial</h3>
+                        <p>Entrenamiento de atención e historial de tu práctica, disponibles también en la versión gratuita.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capturas reales del simulador -->
+        <section class="section section-alt" id="capturas" aria-labelledby="titulo-capturas">
+            <div class="container">
+                <h2 id="titulo-capturas" class="section-title">Así se ve el simulador</h2>
+                <p class="section-lead">Capturas reales del programa en un computador con Windows.</p>
+                <div class="shots">
+                    <figure class="shot">
+                        <a href="assets/img/captura-pregunta.png" target="_blank" rel="noopener noreferrer"><img src="assets/img/captura-pregunta.png" width="1280" height="1100" decoding="async" alt="Pregunta de razonamiento lógico respondida en el modo Práctica: la opción correcta marcada, el tiempo empleado, la explicación, el procedimiento paso a paso y la técnica de resolución."></a>
+                        <figcaption>Cada respuesta se corrige al instante</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <a href="assets/img/captura-resultado.png" target="_blank" rel="noopener noreferrer"><img src="assets/img/captura-resultado.png" width="1280" height="1000" decoding="async" alt="Pantalla de resultado de un intento: 800 puntos de 1000, 8 correctas de 10, escala de preparación y puntaje por componente."></a>
+                        <figcaption>Resultado con puntaje y escala de preparación</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <a href="assets/img/captura-inicio.png" target="_blank" rel="noopener noreferrer"><img src="assets/img/captura-inicio.png" width="1280" height="860" decoding="async" alt="Pantalla de inicio del simulador con los modos Examen completo, Práctica y Estudio, el repaso de errores y los perfiles de examen."></a>
+                        <figcaption>Examen completo, Práctica y Estudio</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <a href="assets/img/captura-atencion.png" target="_blank" rel="noopener noreferrer"><img class="shot-fit" src="assets/img/captura-atencion.png" width="1280" height="580" decoding="async" alt="Pantalla de atención y concentración con tres tareas de 60 segundos: búsqueda de símbolos, comparación de datos y dígitos y símbolos."></a>
+                        <figcaption>Entrenamiento de atención y concentración</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo empezar -->
+        <section class="section" id="como-empezar" aria-labelledby="titulo-empezar">
+            <div class="container">
+                <h2 id="titulo-empezar" class="section-title">¿Cómo empezar?</h2>
+                <ol class="steps">
+                    <li class="step">
+                        <span class="step-num" aria-hidden="true">1</span>
+                        <h3>Descarga e instala</h3>
+                        <p>Pulsa el botón naranja para descargar el instalador oficial y ejecútalo en tu computador.</p>
+                        <p class="tip"><strong>Si Windows muestra «Windows protegió su PC»</strong>, pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>. Aparece porque el instalador todavía no tiene firma digital.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num" aria-hidden="true">2</span>
+                        <h3>Copia tu código</h3>
+                        <p>Abre el simulador y entra en <strong>Activar</strong>. Verás un <strong>Código de Máquina</strong> de la forma XXXX-XXXX-XXXX-XXXX, único de tu computador. La clave que recibas solo funcionará en ese computador.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num" aria-hidden="true">3</span>
+                        <h3>Escríbenos y paga</h3>
+                        <p>Escríbenos por <strong>WhatsApp o por correo</strong> con tu <strong>nombre completo</strong> y tu <strong>código de máquina</strong>. Te enviamos los datos para el pago por transferencia bancaria ($20 USD); luego mándanos el comprobante por el mismo medio.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num" aria-hidden="true">4</span>
+                        <h3>Activa tu licencia</h3>
+                        <p>Cuando confirmemos el pago te enviamos tu clave de activación por el mismo medio, WhatsApp o correo. Pégala en <strong>Activar</strong> y pulsa <strong>Activar</strong>: el simulador queda habilitado por 6 meses.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Exámenes -->
+        <section class="section section-alt" id="examenes" aria-labelledby="titulo-examenes">
+            <div class="container">
+                <h2 id="titulo-examenes" class="section-title">¿Para qué universidades sirve?</h2>
+                <div class="exam-general">
+                    <p class="exam-general-title">Para cualquier universidad o escuela politécnica del Ecuador</p>
+                    <p>El perfil <strong>General</strong> reúne lo que comparten los exámenes de admisión públicos: razonamiento numérico, verbal y abstracto, y conocimientos generales. Además, en el modo Práctica eliges las materias que necesites: matemática, física, química, lenguaje y más.</p>
+                </div>
+                <p class="exam-list-title">Y con perfiles propios, con la estructura publicada por cada institución:</p>
+                <ul class="exam-list">
+                    <li><span class="exam-name">Universidad Central del Ecuador</span> <span class="exam-abbr">UCE</span></li>
+                    <li><span class="exam-name">Escuela Politécnica Nacional</span> <span class="exam-abbr">EPN</span><span class="exam-note">Incluidos los exámenes 2026 de Matemática y de Ciencias</span></li>
+                    <li><span class="exam-name">Universidad de Cuenca</span></li>
+                    <li><span class="exam-name">Yachay Tech</span></li>
+                    <li><span class="exam-name">USECIPOL</span> <span class="exam-abbr">Policía Nacional</span></li>
+                </ul>
+                <p class="disclaimer">Proyectos Tecnológicos GF no está afiliado a ninguna universidad. Los simulacros siguen el formato público de cada examen; no son exámenes oficiales. Revisa siempre la guía oficial de admisión de tu universidad.</p>
+            </div>
+        </section>
+
+        <!-- Licencia y requisitos -->
+        <section class="section" id="licencia" aria-labelledby="titulo-licencia">
+            <div class="container license-grid">
+                <div class="license-main">
+                    <h2 id="titulo-licencia" class="section-title section-title-left">Tu licencia</h2>
+                    <ul class="check-list check-list-lg">
+                        <li>Dura <strong>6 meses</strong> desde que se emite la clave y funciona en <strong>un solo computador</strong>.</li>
+                        <li>El simulador muestra hasta cuándo es válida y te avisa 15 días antes de que termine.</li>
+                        <li>Para <strong>renovarla</strong>, escríbenos por WhatsApp o correo con el mismo código de máquina; te enviamos una clave nueva por 6 meses más.</li>
+                        <li>Las actualizaciones (preguntas y mejoras nuevas) se ofrecen dentro del simulador y conservan tu historial.</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h3><span aria-hidden="true">💻</span> Requisitos</h3>
+                    <p>Un computador con <strong>Windows</strong>.</p>
+                    <p>No funciona en celulares, tablets ni Mac.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas frecuentes -->
+        <section class="section section-alt" id="preguntas" aria-labelledby="titulo-faq">
+            <div class="container container-narrow">
+                <h2 id="titulo-faq" class="section-title">Preguntas frecuentes</h2>
+                <div class="faq">
+                    <details>
+                        <summary>¿Puedo probarlo antes de comprar?</summary>
+                        <p>Sí. Descarga e instala el simulador sin costo. Sin clave puedes practicar y estudiar con hasta 10 preguntas por intento, usar el entrenamiento de atención y ver tu historial. Con la licencia se habilitan el modo Examen completo, los simulacros y todas las preguntas.</p>
+                    </details>
+                    <details>
+                        <summary>¿Funciona en celular, tablet o Mac?</summary>
+                        <p>No. El simulador necesita un computador con Windows.</p>
+                    </details>
+                    <details>
+                        <summary>¿Cuánto cuesta y cómo pago?</summary>
+                        <p>La licencia cuesta $20 USD por 6 meses. Escríbenos por WhatsApp o por correo con tu nombre completo y tu código de máquina; te enviamos los datos para el pago por transferencia bancaria.</p>
+                    </details>
+                    <details>
+                        <summary>¿Puedo usar la clave en otro computador?</summary>
+                        <p>No. La licencia funciona en un solo computador: la clave que recibas solo funcionará en el computador cuyo código de máquina nos enviaste.</p>
+                    </details>
+                    <details>
+                        <summary>¿Qué pasa cuando terminan los 6 meses?</summary>
+                        <p>El simulador te avisa 15 días antes. Para renovar, escríbenos con el mismo código de máquina y te enviamos una clave nueva por 6 meses más.</p>
+                    </details>
+                    <details>
+                        <summary>¿Por qué Windows muestra «Windows protegió su PC»?</summary>
+                        <p>Porque el instalador todavía no tiene firma digital. Pulsa <strong>Más información</strong> y luego <strong>Ejecutar de todas formas</strong>.</p>
+                    </details>
+                    <details>
+                        <summary>¿Pierdo mi historial al actualizar?</summary>
+                        <p>No. Las actualizaciones se ofrecen dentro del simulador y conservan tu historial.</p>
+                    </details>
+                    <details>
+                        <summary>¿Cómo compruebo que el instalador es auténtico?</summary>
+                        <p>Descárgalo solo desde el botón <strong>1. Descargar</strong> de esta página, que lleva a github.com/eguevara1077-cmd/simulador-releases. Si quieres comprobarlo, abre PowerShell en tu carpeta de descargas y ejecuta <code>Get-FileHash .\SimuladorIngresoUniversidades-1.4.0-setup.exe</code>. El resultado debe ser:</p>
+                        <p><code>3CC7A318BFF613FBEEAD1C8499826AE30582B14D940CDB24B493D60D7668D675</code></p>
+                    </details>
+                    <details>
+                        <summary>¿Cómo sé que estoy hablando con el vendedor oficial?</summary>
+                        <p>Escríbenos siempre desde los botones <strong>2. Comprar por WhatsApp</strong> y <strong>3. Comprar por correo</strong> de esta página: así llegas directamente a nuestros canales oficiales. Nunca enviamos el instalador por chat; se descarga únicamente desde el botón <strong>1. Descargar</strong>.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA final y contacto -->
+        <section class="cta-band" id="contacto" aria-labelledby="titulo-contacto">
+            <div class="container">
+                <h2 id="titulo-contacto" class="cta-band-title">Empieza a practicar</h2>
+                <p class="cta-band-text">Descarga el simulador gratis y, cuando quieras la licencia, escríbenos.</p>
+                <div class="cta-group cta-group-center">
+                    <a href="https://github.com/eguevara1077-cmd/simulador-releases/releases/tag/v1.4.0" class="btn btn-download" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📥</span> 1. Descargar Simulador v1.4.0</a>
+                    <a href="https://wa.me/593996299724?text=Hola%2C%20quiero%20comprar%20la%20licencia%20del%20Simulador%20para%20Ingreso%20a%20Universidades%20%286%20meses%2C%20%2420%20USD%29.%0AMi%20nombre%20completo%20es%3A%20%0AMi%20c%C3%B3digo%20de%20m%C3%A1quina%20es%3A%20" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📲</span> 2. Comprar por WhatsApp</a>
+                    <a href="mailto:proyectostecnologicosgf@gmail.com?subject=Compra%20de%20licencia%20del%20Simulador&amp;body=Hola%2C%20quiero%20comprar%20la%20licencia%20del%20Simulador%20para%20Ingreso%20a%20Universidades%20%286%20meses%2C%20%2420%20USD%29.%0AMi%20nombre%20completo%20es%3A%20%0AMi%20c%C3%B3digo%20de%20m%C3%A1quina%20es%3A%20" class="btn btn-email js-email-cta"><span aria-hidden="true">✉️</span> 3. Comprar por correo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 <strong>Proyectos Tecnológicos GF</strong>. Todos los derechos reservados.</p>
+            <p class="footer-legal">Herramienta de uso referencial y didáctico para la preparación académica. No garantiza la admisión ni está afiliada a ninguna universidad.</p>
+        </div>
     </footer>
+
+    <!-- Selector de correo: solo se muestra con JavaScript; sin JavaScript el botón 3 funciona como enlace mailto -->
+    <dialog class="mail-dialog" id="mail-dialog" aria-labelledby="mail-dialog-title" aria-describedby="mail-dialog-desc" hidden>
+        <div class="mail-dialog-inner">
+            <div class="mail-dialog-head">
+                <h2 id="mail-dialog-title">3. Comprar por correo</h2>
+                <button type="button" class="icon-btn js-mail-close" aria-label="Cerrar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </button>
+            </div>
+            <p id="mail-dialog-desc" class="mail-dialog-desc">Elige el correo que usas. El mensaje se abre con nuestra dirección como destinatario, el asunto y el texto listos: completa tu nombre y tu código de máquina y envíalo.</p>
+            <ul class="mail-options">
+                <li><a class="mail-option" data-provider="gmail" href="#" target="_blank" rel="noopener noreferrer" autofocus><span class="mail-option-icon mail-icon-gmail" aria-hidden="true">G</span><span class="mail-option-text"><span class="mail-option-name">Gmail</span><span class="mail-option-hint">Usa la cuenta abierta en este navegador</span></span></a></li>
+                <li><a class="mail-option" data-provider="outlook" href="#" target="_blank" rel="noopener noreferrer"><span class="mail-option-icon mail-icon-outlook" aria-hidden="true">O</span><span class="mail-option-text"><span class="mail-option-name">Outlook / Hotmail</span><span class="mail-option-hint">Outlook.com, Hotmail o Live</span></span></a></li>
+                <li><a class="mail-option" data-provider="yahoo" href="#" target="_blank" rel="noopener noreferrer"><span class="mail-option-icon mail-icon-yahoo" aria-hidden="true">Y</span><span class="mail-option-text"><span class="mail-option-name">Yahoo</span><span class="mail-option-hint">Yahoo Mail</span></span></a></li>
+                <li><a class="mail-option" data-provider="mailto" href="#"><span class="mail-option-icon mail-icon-app" aria-hidden="true">✉️</span><span class="mail-option-text"><span class="mail-option-name">Programa de correo del computador</span><span class="mail-option-hint">Outlook de escritorio, Correo de Windows u otro</span></span></a></li>
+            </ul>
+            <div class="mail-copy">
+                <p class="mail-copy-label">¿Prefieres escribir tú mismo? Nuestra dirección es:</p>
+                <div class="mail-copy-row">
+                    <code class="mail-address" id="mail-address">proyectostecnologicosgf@gmail.com</code>
+                    <button type="button" class="btn-copy js-mail-copy">Copiar dirección</button>
+                </div>
+                <p class="mail-copy-status" id="mail-copy-status" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+    </dialog>
 </body>
 </html>
